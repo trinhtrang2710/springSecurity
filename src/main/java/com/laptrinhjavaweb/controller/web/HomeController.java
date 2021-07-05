@@ -26,7 +26,7 @@ public class HomeController {
 		return mav;
 	}
 	
-	@RequestMapping(value = "/thoat", method = RequestMethod.GET)
+	@RequestMapping(value = "/exit", method = RequestMethod.GET)
 	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if (auth != null) {

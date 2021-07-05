@@ -15,12 +15,14 @@
 						<span class="sr-only">(current)</span>
 				</a></li>
 				<security:authorize access = "isAnonymous()">
-					<li class="nav-item"><a class="nav-link" href="#">Đăng nhập</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Đăng ký</a></li>
+<%--				when	not sign in--%>
+					<li class="nav-item"><a class="nav-link" href="#">Sign in</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Sign up</a></li>
 				</security:authorize>
 				<security:authorize access = "isAuthenticated()">
+<%--					when user sign in--%>
 					<li class="nav-item"><a class="nav-link" href="#">Wellcome <%=SecurityUtils.getPrincipal().getFullName()%></a></li>
-					<li class="nav-item"><a class="nav-link" href="<c:url value='/thoat'/>">Thoát</a></li>
+					<li class="nav-item"><a class="nav-link" href="<c:url value='/exit'/>">Sign out</a></li>
 				</security:authorize>
 			</ul>
 		</div>

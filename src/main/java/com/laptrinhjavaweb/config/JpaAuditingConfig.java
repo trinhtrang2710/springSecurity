@@ -12,22 +12,23 @@ import org.springframework.security.core.context.SecurityContextHolder;
 @EnableJpaAuditing(auditorAwareRef = "auditorProvider")
 public class JpaAuditingConfig {
 
-	@Bean
-	public AuditorAware<String> auditorProvider() {
-		return new AuditorAwareImpl();
-	}
-	//get username from spring security to createDate,createBy, lastModify.. automatically
-	public static class AuditorAwareImpl implements AuditorAware<String> {
+    @Bean
+    public AuditorAware<String> auditorProvider() {
+        return new AuditorAwareImpl();
+    }
 
-		@Override
-		public String getCurrentAuditor() {
-			//get username from spring security
-			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-			//when data null or not login
-			if (authentication == null) {
-				return null;
-			}
-			return authentication.getName();
-		}
-	}
+    //get username from spring security to createDate,createBy, lastModify.. automatically
+    public static class AuditorAwareImpl implements AuditorAware<String> {
+
+        @Override
+        public String getCurrentAuditor() {
+            //get username from spring security
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            //when data null or not login
+            if (authentication == null) {
+                return null;
+            }
+            return authentication.getName();
+        }
+    }
 }

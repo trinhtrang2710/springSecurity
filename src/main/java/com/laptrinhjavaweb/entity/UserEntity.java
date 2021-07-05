@@ -27,6 +27,8 @@ public class UserEntity extends BaseEntity {
 	@Column
 	private Integer status;
 
+	//default : lazy : we need config lazy
+
 	@ManyToMany(fetch = FetchType.LAZY)
 	//create table role
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "userid"), 

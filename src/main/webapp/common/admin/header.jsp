@@ -17,10 +17,10 @@
             <ul class="nav ace-nav">
                 <li class="light-blue dropdown-modal">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                        Xin chào, <%=SecurityUtils.getPrincipal().getFullName()%>
+                        Hello, <%=SecurityUtils.getPrincipal().getFullName()%>
                     </a>
                     <li class="light-blue dropdown-modal">
-                        <a href='<c:url value='/thoat'/>'>
+                        <a href='<c:url value='/exit'/>'>
                             <i class="ace-icon fa fa-power-off"></i>
                             Thoát
                         </a>
