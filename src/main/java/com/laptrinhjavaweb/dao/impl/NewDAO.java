@@ -2,6 +2,7 @@ package com.laptrinhjavaweb.dao.impl;
 
 import java.util.List;
 
+import com.laptrinhjavaweb.dto.NewDTO;
 import org.springframework.stereotype.Repository;
 
 import com.laptrinhjavaweb.dao.INewDAO;
